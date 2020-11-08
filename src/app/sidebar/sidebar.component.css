@@ -1,0 +1,40 @@
+ body {
+     font-family: "Lato", sans-serif;
+ }
+ 
+ .sidenav {
+     height: 100%;
+     width: 200px;
+     position: fixed;
+     z-index: 1;
+     top: 100;
+     left: 0;
+     background-color: orange;
+     padding-top: 120px;
+ }
+ 
+ .sidenav a {
+     padding: 6px 6px 6px 32px;
+     text-decoration: none;
+     font-size: 15px;
+     color: black;
+     display: block;
+ }
+ 
+ .sidenav a:hover {
+     color: green;
+ }
+ 
+ .main {
+     margin-left: 200px;
+     /* Same as the width of the sidenav */
+ }
+ 
+ @media screen and (max-height: 20px) {
+     .sidenav {
+         padding-top: 15px;
+     }
+     .sidenav a {
+         font-size: 1px;
+     }
+ }

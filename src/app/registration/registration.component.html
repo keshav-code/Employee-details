@@ -1,0 +1,43 @@
+<div class="container ">
+    <div class="row ">
+        <div class=" mx-auto border border-success ">
+            <form #IF="ngForm" class="justify-content-center ">
+                <h5 style="text-align:center" class="text-success">Registration</h5>
+                <div class="form-group">
+                    First Name :<input type="text" #firstname="ngModel" name="firstname" class="form-control" placeholder="First Name" [(ngModel)]="ragistrationModel.firstname" required>
+                    <p *ngIf="firstname.touched && !firstname.valid" style="color: darkred; font-size: x-small;">*First name is maindatoery</p>
+                </div>
+
+                <div class="form-group">
+                    Last Name :<input type="text" #lastname="ngModel" name="lastname" class="form-control" placeholder="Last Name" [(ngModel)]="ragistrationModel.lastname" required>
+                    <p *ngIf="lastname.touched && !lastname.valid" style="color: darkred; font-size: x-small;">*lastname is maindatoery</p>
+                </div>
+                <div class="form-group">
+                    <div class="dropdown">
+                        <label for="gender">Gender:</label>
+                        <select class="dropbtn" #gender="ngModel" name="gender" [(ngModel)]="ragistrationModel.gender" required>
+                                        <option [ngValue]="undefined" selected>Select</option>
+                                        <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                 <option value="transgender">Transgender</option>
+                                
+                                </select>
+                    </div>
+                    <p *ngIf="gender.touched && !gender.valid" style="color: darkred; font-size: x-small;">*Gender is maindatoery</p>
+                </div>
+                <div class="form-group">
+                    Mobile No:<input type="text" name="mobileno" #moblie="ngModel" class="form-control" placeholder="Mobile No" [(ngModel)]="ragistrationModel.mobileno" required>
+                    <p *ngIf="moblie.touched && !moblie.valid" style="color: darkred; font-size: x-small;" [ngClass]="'error'">*Mobileno is maindatoery</p>
+                </div>
+                <div class="form-group">
+                    Email:<input type="email" name="email" #emailcontol="ngModel" class="form-control" placeholder="Email" [(ngModel)]="ragistrationModel.email" required>
+                    <p *ngIf="emailcontol.touched && !emailcontol.valid" style="color: darkred; font-size: x-small;">*Email is maindatoery</p>
+                </div>
+
+                <button type="submit" (click)="signIn(ragistrationModel)" routerLink="/home" class="btn btn-success  float-right" [disabled]="!IF.valid">Login</button>
+
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="bs">
+        <p *ngIf="useName.touched && !useName.valid || pass.touched && !pass.valid" style="color: red; font-size: x-small;"> * UserName and Password are maindatoery</p>
+        <p style="color: red; font-size: x-small;">{{usernamepassword}}</p>
+        <form #LF="ngForm" class="form-inline">
+            <div class="form-group mr-2">
+                <label class="sr-only" for="inputEmail">UserName</label>
+                <input type="text" class="form-control" name="userName" #useName="ngModel" placeholder="User Name" [(ngModel)]="loginModel.userName" required>
+
+            </div>
+            <div class="form-group mr-2">
+                <label class="sr-only" for="inputPassword">Password</label>
+                <input type="password" class="form-control" #pass="ngModel" name="password" placeholder="Password" [(ngModel)]="loginModel.password" required>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary" (click)="onLogIn() " [disabled]="!LF.valid">Log in</button>
+
+        </form>
+        <div class="forget">
+            <a href="" data-toggle="modal" data-target="#myModal">Forgot password?</a>
+        </div>
+        <div class="container">
+
+            <!-- The Modal -->
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Please Enter Your Email Id</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <div class="form-group">
+                            Email:<input type="email" name="email" class="form-control" placeholder="Email" required>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger">ok</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <h1>
+        <hr style="width:100%;text-align:left;margin-left:0">
+    </h1>
+
+    <app-registration></app-registration>
+
+</body>
+
+</html>
