@@ -39,18 +39,6 @@ export class LoginComponent implements OnInit {
   
   
 
-  onTextChange(value)
-  {
-    console.log(value);
-    this.loginModel.userName = value;
-    if(this.loginModel.userName == '')
-    {
-      this.usernamepassword='';
-      console.log(this.usernamepassword);
-    }
-    
-  }
-
   
  
 
