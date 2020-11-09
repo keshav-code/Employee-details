@@ -34,7 +34,7 @@
                     <p *ngIf="emailcontol.touched && !emailcontol.valid" style="color: darkred; font-size: x-small;">*Email is maindatoery</p>
                 </div>
 
-                <button type="submit" (click)="signIn(ragistrationModel)" routerLink="/home" class="btn btn-success  float-right" [disabled]="!IF.valid">Login</button>
+                <button type="submit" (click)="signUp(ragistrationModel)" routerLink="/home" class="btn btn-success  float-right" [disabled]="!IF.valid">Register</button>
 
 
             </form>

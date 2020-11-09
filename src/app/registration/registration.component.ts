@@ -15,9 +15,8 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  signIn(ragistration)
+  signUp(ragistration)
   {
-  console.log('keshav');
   this.regs=Object.assign(this.regs,ragistration);
   this.regService.setRegisterData(this.regs);
   sessionStorage.setItem('session',"this.ragistrationModel.firstname");

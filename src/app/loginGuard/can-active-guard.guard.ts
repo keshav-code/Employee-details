@@ -17,9 +17,7 @@ export class CanActiveGuardGuard implements CanActivate {
     this.rout.navigate(['']);
     return false;
    }
-   
-   
-   
+
       return true;
   }
   
